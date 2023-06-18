@@ -85,6 +85,9 @@ func ReadTicketFromFile() []string {
 	return text
 }
 
+func ReadLTP(ticket string) {
+
+}
 func main() {
 	//var file *os.File
 	s := ReadTicketFromFile()
