@@ -68,5 +68,29 @@ func main() {
 	//var file *os.File
 	s := ReadTicketFromFile()
 	fmt.Println(s[0])
+	args := os.Args[1:]
 
+	fmt.Println(args)
+
+	if len(args) == 2 || len(args) == 1 {
+		switch args[0] {
+		case "-h":
+			fmt.Printf(" tag: description\n -t: with ticket to show current ticket data \n -p: with portfolio file to show current data of portfolio \n")
+		case "-t":
+			if args[1] != "" {
+				fmt.Printf("getting detatils for the ticket : %s", args[1])
+			} else {
+				fmt.Println("expected a ticket to be entered")
+			}
+		case "-p":
+			if args[1] != "" {
+				fmt.Printf("getting detatils for the portfolio : %s", args[1])
+			} else {
+				fmt.Println("expected a portfolio to be entered")
+			}
+		default:
+			fmt.Println("not a valid option. please run the cmd with -h tag to choose a valid option")
+		}
+
+	}
 }
